@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "composer" # Magento 2 utiliza Composer para la gestión de paquetes.
+    directory: "/" # Directorio raíz del repositorio
+    schedule:
+      interval: "daily" # Puedes ajustar la frecuencia de verificación
+
+    # Define un filtro para que Dependabot solo actualice el módulo deseado.
+    # En este ejemplo, usamos "magento/module-nombre-modulo".
+    # Asegúrate de reemplazar "magento/module-nombre-modulo" con el nombre real de tu módulo.
+    open-pull-requests:
+      - package-name: "magento/module-nombre-modulo"
+        dependency-type: "all"
+    # Actualiza la rama principal
+    branch: main
+    # Realiza la actualización de forma automática
+    auto-merge: true
